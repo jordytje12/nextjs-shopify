@@ -1,5 +1,5 @@
-import { ShopifyFetch } from '@/lib/shopify';
-import { MyQuery } from '@/lib/queries/test';
+import { ShopifyFetch } from '@/src/lib/shopify';
+import { MyQuery } from '@/src/lib/queries/test';
 
 export default async function TestPage() {
     const data = await ShopifyFetch({
