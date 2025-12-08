@@ -3,7 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/src/app/globals.css";
 import { client } from "@/src/sanity/client";
 import { headerQuery } from "@/src/sanity/schemaTypes/queries/header.query";
+import { footerQuery } from "@/src/sanity/schemaTypes/queries/footer.query";
 import Header from "../components/ui/header";
+import Footer from "../components/ui/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +28,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const headerData = await client.fetch(headerQuery);
+  const footerData = await client.fetch(footerQuery);
   return (
     <html lang="nl">
       <body
@@ -37,6 +40,9 @@ export default async function RootLayout({
       <main>
         {children}
       </main>
+      <Footer
+        data={footerData}
+      />
       </body>
     </html>
   );

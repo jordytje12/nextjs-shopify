@@ -11,8 +11,8 @@ interface ProductCardProps {
 
 export default function ProductCard({ title, handle, price, imageUrl }: ProductCardProps) {
   return (
-    <Link href={`/product/${handle}`} className="group block h-full">
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100 mb-4">
+    <Link href={`/products/${handle}`} className="group block h-full">
+      <div className="relative aspect-3/4 w-full overflow-hidden bg-gray-100 mb-4">
         {/* Afbeelding met Zoom effect op hover */}
         {imageUrl ? (
           <Image

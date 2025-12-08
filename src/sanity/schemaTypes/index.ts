@@ -7,6 +7,7 @@ import {authorType} from '../blog/authorType'
 import {shopifyTypes} from './shopify'
 import {homepage} from './singletons/homepage'
 import header from './singletons/header'
+import footer from './singletons/footer'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -18,5 +19,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
       ...shopifyTypes,
       homepage,
       header,
+      footer
   ],
 }

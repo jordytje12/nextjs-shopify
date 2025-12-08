@@ -27,7 +27,17 @@ export const structure: StructureResolver = (S) =>
                         .schemaType('header')
                         .documentId('header'),
                 ),
+                S.listItem()
+          .title('Footer')
+          .id('footer-singleton')
+          .icon(() => '⚓')
+                .child(
+                    S.document()
+                        .schemaType('footer')
+                        .documentId('footer'),
+                ),
+      S.divider(),
       ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !['post', 'category', 'author', 'homepage', 'header'].includes(item.getId()!),
+        (item) => item.getId() && !['post', 'category', 'author', 'homepage', 'header', 'footer'].includes(item.getId()!),
       ),
     ])
